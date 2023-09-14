@@ -14,8 +14,7 @@ rang = int(input("Enter the max range that the computer can draw from: "))
 number = randNumbRangePicker(rang)
 
 for X in range(tries):  # the guessing section
-    ask = f"number of tries left: {tries - X}\nWhat is your guess from 1 - {rang}?:"
-    guess = int(input(ask))
+    guess = int(input(f"number of tries left: {tries - X}\nWhat is your guess from 1 - {rang}?:"))
     if guess == number:
         break
     else:
