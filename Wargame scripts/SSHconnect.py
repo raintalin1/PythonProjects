@@ -14,7 +14,7 @@ class sshConncetionPassCommands:
         password = password
         commands = commands
 
-    def commandInPassOut(host, port, username, password, commands, outIndex=-1):
+    def commandInPassOut(host, port, username, password, commands):
 
         ssh_host = host
         ssh_port = port
@@ -28,7 +28,7 @@ class sshConncetionPassCommands:
             stdin, stdout, stderr = ssh_client.exec_command(commands)
 
             output = stdout.read().decode('utf-8').splitlines()
-            password = output[outIndex]
+            password = output[-1]
 
             ssh_client.close()
             print(output, password)
